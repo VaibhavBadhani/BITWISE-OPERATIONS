@@ -1,0 +1,75 @@
+#include <stdio.h>
+
+int
+main ()
+{
+    /****************************************   NORMAL BITWISE OPERATIONS**************************************
+    int a=5;
+    int z=22;
+    //******************************************DIVISION BY 2***************************************************/
+  int b = a >> 1;
+  printf ("%d\n", b);
+    /*******************************************MULTIPLY BY 2***************************************************/
+  b = a << 1;
+  printf ("%d\n", b);
+    /*****************************************FINDING OUT EVEN OR ODD********************************************/
+  //even no last digit is 0
+  //odd no last digit is 1 
+  //therefore on doing and operation with even will give 0 and odd 0
+  if (a & 1 == 1)
+    {
+      printf ("a is a odd number\n");
+    }
+  else
+    {
+      printf ("a is a even number\n");
+    }
+  if (z & 1 == 1)
+    {
+      printf ("z is a odd number\n");
+    }
+  else
+    {
+      printf ("z is a even number\n");
+    }
+    /******************************************SWAPPING TWO NUMBERS**********************************************/
+  //a swap z 
+  a = 10;
+  z = 55;
+  a = a ^ z;
+  z = a ^ z;
+  a = a ^ z;
+  printf ("a is %d and z is %d\n", a, z);
+    /***********************************************FINDING THE iTH BIT***************************************************/
+  a = 64;
+  //find the 4 bit 
+  b = 1;
+  b = b << 4;			//b<<i
+  if (a & b != 0)
+    {
+      printf ("1\n");
+    }
+  else
+    {
+      printf ("0\n");
+    }
+    /***********************************************SETTING THE ith BIT**************************************************/
+  a = 64;
+  //set the 4 bit 
+  b = 1;
+  b = b << 4;			//b<<i
+  a = a | b;
+  printf ("the value of a after setting is %d\n", a);
+    /***********************************************CLEAR THE ith BIT*****************************************************/
+  a = 63;
+  //clear ith BIT
+  b = 1;
+  b = b << 4;
+  //now b becomes 10000 but you need its compliment cause we need and operation with zero
+  b = ~b;
+  a = a & b;
+  printf ("after clearinf value of a is now %d\n", a);
+
+
+  return 0;
+}
